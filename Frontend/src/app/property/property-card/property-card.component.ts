@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Property } from "../interface";
 
 @Component({
     selector: 'app-property-card',
@@ -8,11 +9,6 @@ import { Component } from "@angular/core";
 export class PropertCardComponent {
     //String interpolition always returns value as string and data always flow in one direction
     //from component to html element
-    property : any = {
-        "Id" : 1,
-        "Name" : "Birla House",
-        "Type" : "House",
-        "Price" : 12000
-    }
+    @Input () propert_name : Property | undefined;
 
 }
