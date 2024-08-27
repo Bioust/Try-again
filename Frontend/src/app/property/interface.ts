@@ -1,8 +1,8 @@
 export interface Property {
-  Id: Number;
-  SellRent: Number;
-  Name: String;
-  Type: String;
-  Price: Number;
+  Id: number | undefined;
+  SellRent: number | undefined;
+  Name: String | undefined;
+  Type: String | undefined;
+  Price: number | undefined;
   Image?: String
 }

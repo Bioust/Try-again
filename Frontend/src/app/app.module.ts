@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 const routes: Routes = [
     {path: '', component: PropertyListComponent},
@@ -50,6 +51,7 @@ const routes: Routes = [
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     RouterModule.forRoot(routes)
 ],
   providers: [

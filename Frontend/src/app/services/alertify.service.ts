@@ -5,6 +5,9 @@ import * as alertifyjs from 'alertifyjs';
   providedIn: 'root'
 })
 export class AlertifyService {
+error(arg0: string) {
+  throw new Error('Method not implemented.');
+}
 
 constructor() { }
 
