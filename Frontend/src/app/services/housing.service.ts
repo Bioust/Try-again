@@ -15,27 +15,44 @@ export class HousingService {
     private http:HttpClient
   ) { }
 
-  getAllProperties(sellRent : number) : Observable<IPropertyBase[]> {
+  getProperty(id:number) {
+    return this.getAllProperties().pipe(
+      map(propertiesArray => {
+          return propertiesArray.find(x=> x.Id === id);
+      })
+    );
+  }
+
+  getAllProperties(sellRent? : number) : Observable<Property[]> {
     return this.http.get<{ [key: string]: Property }>('data/properties.json').pipe(
       map (data => {
-        const propertiesArray : Array<IPropertyBase> = [];
+        const propertiesArray : Array<Property> = [];
         const localStorageData:any = localStorage.getItem('newProp');
         const parseData = JSON.parse(localStorageData);
         if(parseData) {
           for (const id in parseData) {
+            if(sellRent) {
             if(parseData[id].SellRent == sellRent) {
               propertiesArray.push(parseData[id]);
             }
+          } else {
+            propertiesArray.push(parseData[id]);
+          }
           }
         }
         for (const id in data) {
+          if(sellRent) {
           if(data[id].SellRent === sellRent) {
             propertiesArray.push(data[id]);
           }
+        } else {
+          propertiesArray.push(data[id]);
+        }
         }
         return propertiesArray;
       })
-    )
+    );
+    return this.http.get<Property[]>('data/properties.json');
   }
 
   addProperty(property: Property) {
