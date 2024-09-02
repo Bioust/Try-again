@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "new-app": {
+    "hspa-by-bioust": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/new-app",
+            "outputPath": "dist/hspa-by-bioust",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "new-app:build:production"
+              "buildTarget": "hspa-by-bioust:build:production"
             },
             "development": {
-              "buildTarget": "new-app:build:development"
+              "buildTarget": "hspa-by-bioust:build:development"
             }
           },
           "defaultConfiguration": "development"
